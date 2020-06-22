@@ -62,8 +62,10 @@ const readData = () => {
 
     var lines = [];
 
-    reader.on("line", function(line) {
-      lines.push(line.split(";"));
+    reader.on("line", line => {
+      line = line.trim();
+
+      if (line) lines.push(line.split(";"));
     });
 
     reader.on("close", () => {
