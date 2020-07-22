@@ -1,12 +1,22 @@
 * piechart
 Generate a pie chart from CSV input.
 
+** Build
+
 #+begin_src shell
-echo -e "70;car\n30;plane\n" | ./launch.sh /tmp/pie.png
+  nix-build .
 #+end_src
 
-** Development
-*** Regenerate nix files
+** Launch
+
 #+begin_src shell
-NIX_PATH="nixpkgs=channel:nixos-19.09" cd nix && node2nix --input ../package.json --development --nodejs-10
+  echo -e "70;car\n30;plane\n" | ./result/bin/piechart /tmp/pie.png
+#+end_src
+
+** Regenerate nix files
+
+If you update =package.json=, you have to regenerate =node2nix= files:
+
+#+begin_src shell
+  NIX_PATH="nixpkgs=channel:nixos-19.09" cd node2nix && node2nix --input ../package.json --development --nodejs-10
 #+end_src
