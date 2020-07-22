@@ -1728,7 +1728,7 @@ let
     name = "piechart";
     packageName = "piechart";
     version = "0.1.0";
-    src = ./.;
+    src = ./..;
     dependencies = [
       sources."@babel/code-frame-7.10.4"
       sources."@babel/helper-validator-identifier-7.10.4"

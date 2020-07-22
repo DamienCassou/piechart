@@ -8,5 +8,5 @@ echo -e "70;car\n30;plane\n" | ./launch.sh /tmp/pie.png
 ** Development
 *** Regenerate nix files
 #+begin_src shell
-NIX_PATH="nixpkgs=channel:nixos-19.09" node2nix --development --nodejs-10
+NIX_PATH="nixpkgs=channel:nixos-19.09" cd nix && node2nix --input ../package.json --development --nodejs-10
 #+end_src

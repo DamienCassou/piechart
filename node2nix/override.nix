@@ -1,6 +1,6 @@
+{pkgs}:
 let
-  pkgs = import <nixpkgs> { };
-  nodePackages = import ./default.nix {};
+  nodePackages = import ./default.nix {inherit pkgs;};
 in
 nodePackages // {
   package = nodePackages.package.override {
