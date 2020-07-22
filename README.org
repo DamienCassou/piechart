@@ -1,1 +1,12 @@
-Generates a pie chart from CSV input.
+* piechart
+Generate a pie chart from CSV input.
+
+#+begin_src shell
+echo -e "70;car\n30;plane\n" | ./launch.sh /tmp/pie.png
+#+end_src
+
+** Development
+*** Regenerate nix files
+#+begin_src shell
+NIX_PATH="nixpkgs=channel:nixos-19.09" node2nix --development --nodejs-10
+#+end_src
