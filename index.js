@@ -1,5 +1,6 @@
 const readline = require("readline");
 const ChartjsNode = require("chartjs-node");
+const randomColor = require('randomcolor');
 
 const devicePixelRatio = 5;
 
@@ -21,7 +22,7 @@ const pieChartOptions = ({ data }) => {
       datasets: [
         {
           data: values,
-          backgroundColor: colors
+          backgroundColor: randomColor({count: labels.length, luminosity: 'dark'})
         }
       ],
       labels,
@@ -32,27 +33,6 @@ const pieChartOptions = ({ data }) => {
     }
   };
 };
-
-const colors = [
-  "#ff0000",
-  "#00ff00",
-  "#0000ff",
-  "#ffff00",
-  "#00ffff",
-  "#ff00ff",
-  "#880000",
-  "#008800",
-  "#000088",
-  "#888800",
-  "#008888",
-  "#880088",
-  "#440000",
-  "#004400",
-  "#000044",
-  "#444400",
-  "#004444",
-  "#440044"
-];
 
 const readData = () => {
   return new Promise(resolve => {

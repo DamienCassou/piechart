@@ -1327,13 +1327,13 @@ let
         sha512 = "N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==";
       };
     };
-    "randomcolor-0.5.4" = {
+    "randomcolor-0.6.2" = {
       name = "randomcolor";
       packageName = "randomcolor";
-      version = "0.5.4";
+      version = "0.6.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/randomcolor/-/randomcolor-0.5.4.tgz";
-        sha512 = "nYd4nmTuuwMFzHL6W+UWR5fNERGZeVauho8mrJDUSXdNDbao4rbrUwhuLgKC/j8VCS5+34Ria8CsTDuBjrIrQA==";
+        url = "https://registry.npmjs.org/randomcolor/-/randomcolor-0.6.2.tgz";
+        sha512 = "Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==";
       };
     };
     "regexpp-3.1.0" = {
@@ -1893,7 +1893,7 @@ let
       sources."psl-1.8.0"
       sources."punycode-2.1.1"
       sources."qs-6.5.2"
-      sources."randomcolor-0.5.4"
+      sources."randomcolor-0.6.2"
       sources."regexpp-3.1.0"
       sources."request-2.88.2"
       sources."resolve-from-4.0.0"
