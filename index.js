@@ -12,8 +12,8 @@ const generateChart = ({ data, dimension, filename }) => {
 };
 
 const pieChartOptions = ({ data }) => {
-  const labels = data.map(pair => `${pair[1]} (${pair[0]})`);
-  const values = data.map(pair => pair[0]);
+  const labels = data.map((pair) => `${pair[1]} (${pair[0]})`);
+  const values = data.map((pair) => pair[0]);
 
   return {
     type: "doughnut",
@@ -21,15 +21,15 @@ const pieChartOptions = ({ data }) => {
       datasets: [
         {
           data: values,
-          backgroundColor: colors
-        }
+          backgroundColor: colors,
+        },
       ],
       labels,
-      borderWidth: 0
+      borderWidth: 0,
     },
     options: {
-      devicePixelRatio
-    }
+      devicePixelRatio,
+    },
   };
 };
 
@@ -51,18 +51,18 @@ const colors = [
   "#000044",
   "#444400",
   "#004444",
-  "#440044"
+  "#440044",
 ];
 
 const readData = () => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const reader = readline.createInterface({
-      input: process.stdin
+      input: process.stdin,
     });
 
     var lines = [];
 
-    reader.on("line", line => {
+    reader.on("line", (line) => {
       line = line.trim();
 
       if (line) lines.push(line.split(";"));
@@ -86,12 +86,12 @@ const main = async () => {
   generateChart({
     data,
     filename,
-    dimension: 500
+    dimension: 500,
   });
 };
 
 main()
   .then()
-  .catch(err => {
+  .catch((err) => {
     throw err;
   });
