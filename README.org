@@ -4,7 +4,9 @@ Generate a pie chart from CSV input.
 ** Build
 
 #+begin_src shell
+  test -h node_modules && unlink node_modules
   nix-build .
+  nix-shell --run 'ln -s $NODE_PATH node_modules'
 #+end_src
 
 ** Launch
@@ -18,5 +20,6 @@ Generate a pie chart from CSV input.
 If you update =package.json=, you have to regenerate =node2nix= files:
 
 #+begin_src shell
+  test -h node_modules && unlink node_modules
   NIX_PATH="nixpkgs=channel:nixos-19.09" cd node2nix && node2nix --input ../package.json --development --nodejs-10
 #+end_src
