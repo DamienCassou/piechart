@@ -5,8 +5,8 @@
 
 let
   node = pkgs."nodejs-10_x";
-  nodePackages = import ./node2nix/override.nix { inherit pkgs; };
-  pieChartModule = nodePackages.package;
+  node2nixSetup = import ./node2nix/override.nix { inherit pkgs; };
+  pieChartModule = node2nixSetup.package;
 in pkgs.writeShellScriptBin "piechart" ''
   ${node}/bin/node ${pieChartModule}/lib/node_modules/piechart/index.js "$@"
 ''
